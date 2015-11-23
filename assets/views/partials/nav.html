@@ -1,0 +1,238 @@
+<!-- start: SEARCH FORM -->
+<div class="search-form">
+	<a class="s-open" href="#">
+		<i class="ti-search"></i>
+	</a>
+	<form class="navbar-form" role="search">
+		<a class="s-remove" href="#" ng-toggle-class="search-open" target=".navbar-form">
+			<i class="ti-close"></i>
+		</a>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="{{ 'sidebar.search.PLACEHOLDER' | translate }}">
+			<button class="btn search-button" type="submit">
+				<i class="ti-search"></i>
+			</button>
+		</div>
+	</form>
+</div>
+<!-- end: SEARCH FORM -->
+<!-- start: MAIN NAVIGATION MENU -->
+<div class="navbar-title">
+	<span translate="sidebar.heading.NAVIGATION">Main Navigation</span>
+</div>
+<ul class="main-navigation-menu">
+	<li ui-sref-active="active">
+		<a ui-sref="app.dashboard">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-home"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.dashboard.MAIN"> Dashboard </span>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.insights')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-bar-chart"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.insights.MAIN"> INSIGHTS </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			
+			<li ui-sref-active="active">
+				<a ui-sref="app.insights.analytics">
+					<span class="title" translate="sidebar.nav.insights.ANALYTICS">Clinical Analytics</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.insights.details">
+					<span class="title" translate="sidebar.nav.insights.DETAILS">Patient Explorer</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.insights.timeline">
+					<span class="title" translate="sidebar.nav.insights.TIMELINE">Patient Timeline</span>
+				</a>
+			</li>
+		</ul>
+		
+	</li>
+	<li ng-class="{'active open':$state.includes('app.ui')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-settings"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.element.MAIN"> UI Elements </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.elements">
+					<span class="title" translate="sidebar.nav.element.ELEMENTS"> Elements </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.buttons">
+					<span class="title" translate="sidebar.nav.element.BUTTONS"> Buttons </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.links">
+					<span class="title" translate="sidebar.nav.element.LINKS"> Links </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.icons">
+					<span class="title" translate="sidebar.nav.element.FONTAWESOME"> Font Awesome Icons </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.lineicons">
+					<span class="title" translate="sidebar.nav.element.LINEARICONS"> Linear Icons </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.modals">
+					<span class="title" translate="sidebar.nav.element.MODALS"> Modals </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.toggle">
+					<span class="title" translate="sidebar.nav.element.TOGGLE"> Toggle </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.tabs_accordions">
+					<span class="title" translate="sidebar.nav.element.TABS"> Tabs &amp; Accordions </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.panels">
+					<span class="title" translate="sidebar.nav.element.PANELS"> Panels </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.notifications">
+					<span class="title" translate="sidebar.nav.element.NOTIFICATIONS"> Notifications </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.treeview">
+					<span class="title" translate="sidebar.nav.element.TREEVIEW"> Treeview </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.media">
+					<span class="title" translate="sidebar.nav.element.MEDIA"> Media Object </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.nestable">
+					<span class="title" translate="sidebar.nav.element.NESTABLE"> Nestable List </span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.ui.typography">
+					<span class="title" translate="sidebar.nav.element.TYPOGRAPHY"> Typography </span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.table')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-layout-grid2"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.tables.MAIN"> Tables </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.basic">
+					<span class="title" translate="sidebar.nav.tables.BASIC">Basic Tables</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.responsive">
+					<span class="title" translate="sidebar.nav.tables.RESPONSIVE">Responsive Tables</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.table.data">
+					<span class="title" translate="sidebar.nav.tables.DATA">Advanced Data Tables</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ng-class="{'active open':$state.includes('app.datamanager')}">
+		<a href="javascript:void(0)">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-server"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate="sidebar.nav.datamanager.TITLE"> DataHub </span><i class="icon-arrow"></i>
+				</div>
+			</div>
+		</a>
+		<ul class="sub-menu">
+			<li ui-sref-active="active">
+				<a ui-sref="app.datamanager.upload">
+					<span class="title" translate="sidebar.nav.datamanager.UPLOAD">Upload</span>
+				</a>
+			</li>
+			<li ui-sref-active="active">
+				<a ui-sref="app.datamanager.download">
+					<span class="title" translate="sidebar.nav.datamanager.DOWNLOAD">Download</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li ui-sref-active="active">
+		<a ui-sref="app.utilities.search">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-search"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate=""> Advanced Search </span>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li ui-sref-active="active">
+		<a ui-sref="app.utilities.movies">
+			<div class="item-content">
+				<div class="item-media">
+					<i class="ti-search"></i>
+				</div>
+				<div class="item-inner">
+					<span class="title" translate=""> Movie Search </span>
+				</div>
+			</div>
+		</a>
+	</li>
+</ul>
+<!-- end: MAIN NAVIGATION MENU -->
+
+<!-- start: DOCUMENTATION BUTTON -->
+<div class="wrapper">
+	<a ui-sref="app.documentation" class="button-o">
+		<i class="ti-help"></i>
+		<span translate="">HELP</span>
+	</a>
+</div>
+<!-- end: DOCUMENTATION BUTTON -->

@@ -1,0 +1,132 @@
+start: PAGE TITLE -->
+<section id="page-title">
+	<div class="row">
+		<div class="col-sm-8">
+			<h1 class="mainTitle" translate="sidebar.nav.insights.ANALYTICS">{{ mainTitle }}</h1>
+			<span class="mainDescription">Place a description of the clinical analytic concepts showcased below, with clear navigation to each level of insight.</span>
+		</div>
+		<div ncy-breadcrumb></div>
+	</div>
+</section>
+<!-- end: PAGE TITLE -->
+
+<!-- start: BAR CHART -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-sm-12">
+			<h5 class="over-title margin-bottom-15">Bar <span class="text-bold">Chart</span></h5>
+			<div class="row">
+				<!-- /// controller:  'ChartCtrl2' -  localtion: assets/js/controllers/chartsCtrl.js /// -->
+				<div ng-controller="ChartCtrl2">
+					<!--div class="col-sm-6">
+						<p class="margin-bottom-20">
+							A bar chart is a way of showing data as bars.
+							It is sometimes used to show trend data, and the comparison of multiple data sets side by side.
+						</p>
+						<p>
+							The bar chart has the a very similar data structure to the line chart, and has an array of datasets, each with colours and an array of data. Again, colours are in CSS format.
+							We have an array of labels too for display. In the example, we are showing the same data as the previous line chart example.
+						</p>
+						<p>
+							The label key on each dataset is optional, and can be used when generating a scale for the chart.
+						</p>
+						<p class="margin-top-20">
+							<div tc-chartjs-legend chart-legend="lineChart2"></div>
+						</p>
+					</div-->
+					<div class="col-sm-6">
+						<canvas class="tc-chart" tc-chartjs-bar chart-options="options" chart-data="data" chart-legend="lineChart2"></canvas>
+					</div>
+					<div class="col-sm-6">
+						<canvas class="tc-chart" tc-chartjs-bar chart-options="options" chart-data="data" chart-legend="lineChart2"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: BAR CHART -->
+<!-- <!-- start: INLINE EDIT EXAMPLE -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Inline <span class="text-bold">edit example</span></h5>
+			<!-- /// controller:  'ngTableCtrl6' -  localtion: assets/js/controllers/ngTableCtrl.js /// -->
+			<div ng-controller="ngTableCtrl6">
+				<div class="row margin-bottom-10">
+					<div class="col-md-12">
+						<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">
+							Clear sorting
+						</button>
+					</div>
+				</div>
+				<strong>Sorting:</strong> {{tableParams.sorting()|json}}
+				<div class="table-responsive">
+					<table ng-table="tableParams" class="table">
+						<tbody ng-repeat="p in $data">
+							<tr id="tr{{p.id}}" ng-class-odd="'odd'" ng-class-even="'even'">
+								<td class="rowTd" data-title="'ID'"          sortable="'id'">{{p.id}}</td>
+								<td class="rowTd" data-title="'Firstname'"   sortable="'fn'">{{p.fn}}</td>
+								<td class="rowTd" data-title="'Lastname'"    sortable="'ln'">{{p.ln}}</td>
+								<td class="rowTd" data-title="'Description'" sortable="'dc'">{{p.dc}}</td>
+								<td class="rowTd" data-title="'Email'"       sortable="'em'">{{p.em}}</td>
+								<td class="rowTd" data-title="'Phone'"       sortable="'ph'">{{p.ph}}</td>
+								<td class="rowTd" >
+								<div class="pull-right margin-right-10">
+									<input type=button class="btn btn-primary btn-o btn-sm" id="editRowBtn{{p.id}}" value="edit"
+									ng-click="setEditId(p.id)">
+								</div></td>
+							</tr>
+							<tr ng-show="editId===p.id" ng-if="editId===p.id">
+								<td colspan="7" ng-include src="'assets/views/editRow.html'"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: INLINE EDIT EXAMPLE --> -->
+<!-- start: REMOTE DATA INLINE EDIT EXAMPLE -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Remote Data <span class="text-bold">Edit Example</span></h5>
+			<!-- /// controller:  'patientsCtrl' -  localtion: assets/js/controllers/patientsCtrl.js /// -->
+			<div ng-controller="PatientsController">
+				<div class="row margin-bottom-10">
+					<div class="col-md-12">
+						<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">
+							Clear sorting
+						</button>
+					</div>
+				</div>
+				<strong>Sorting:</strong> {{tableParams.sorting()|json}}
+				<div class="table-responsive">
+					<table ng-table="tableParams" class="table">
+						<tbody ng-repeat="p in data">
+							<tr id="tr{{p.id}}" ng-class-odd="'odd'" ng-class-even="'even'">
+								<td class="rowTd" data-title="'ID'"          sortable="'id'">{{p.id}}</td>
+								<td class="rowTd" data-title="'Firstname'"   sortable="'fn'">{{p.fn}}</td>
+								<td class="rowTd" data-title="'Lastname'"    sortable="'ln'">{{p.ln}}</td>
+								<td class="rowTd" data-title="'Description'" sortable="'dc'">{{p.dc}}</td>
+								<td class="rowTd" data-title="'Email'"       sortable="'em'">{{p.em}}</td>
+								<td class="rowTd" data-title="'Phone'"       sortable="'ph'">{{p.ph}}</td>
+								<td class="rowTd" >
+								<div class="pull-right margin-right-10">
+									<input type=button class="btn btn-primary btn-o btn-sm" id="editRowBtn{{p.id}}" value="edit"
+									ng-click="setEditId(p.id)">
+								</div></td>
+							</tr>
+							<tr ng-show="editId===p.id" ng-if="editId===p.id">
+								<td colspan="7" ng-include src="'assets/views/editRow.html'"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: INLINE EDIT EXAMPLE

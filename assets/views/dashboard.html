@@ -1,0 +1,333 @@
+<!-- start: DASHBOARD TITLE -->
+<section id="page-title" class="padding-top-15 padding-bottom-15">
+	<div class="row">
+		<div class="col-sm-7">
+			<h1 class="mainTitle" translate="dashboard.HOME" translate-values="{ appName: app.name }">HOME</h1>
+			<span class="mainDescription">Clinical Signals &amp; Insights </span>
+		</div>
+		<div class="col-sm-5">
+			<!-- start: MINI STATS WITH SPARKLINE -->
+			<!-- /// controller:  'SparklineCtrl' -  localtion: assets/js/controllers/dashboardCtrl.js /// -->
+			<ul class="mini-stats pull-right" ng-controller="SparklineCtrl">
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="sales" type="bar" height="20px" bar-color="#D43F3A"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">140</strong>
+						<p class="text-small no-margin">
+							# of Patients
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="earnings" type="bar" height="20px" bar-color="#5CB85C"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">4,911</strong>
+						<p class="text-small no-margin">
+							Encounters
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="sparkline">
+						<span jq-sparkline ng-model="referrals" type="bar" height="20px" bar-color="#46B8DA"></span>
+					</div>
+					<div class="values">
+						<strong class="text-dark">1,987,832</strong>
+						<p class="text-small no-margin">
+							Concepts
+						</p>
+					</div>
+				</li>
+			</ul>
+			<!-- end: MINI STATS WITH SPARKLINE -->
+		</div>
+	</div>
+</section>
+<!-- end: DASHBOARD TITLE -->
+<!-- start: FEATURED BOX LINKS -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-stethoscope fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">Provider Insights</h2>
+					<p class="text-small">
+						Explore the data features in patient encounters.
+					</p>
+					<p class="links cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-bar-chart-o fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">Population Analytics</h2>
+					<p class="text-small">
+						Click to view the Clinical Analytics available for the dataset.
+					</p>
+					<p class="cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="panel panel-white no-radius text-center">
+				<div class="panel-body">
+					<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+					<h2 class="StepTitle">DataHub</h2>
+					<p class="text-small">
+						View the data used in developing the clinical analytics.
+					</p>
+					<p class="links cl-effect-1">
+						<a href>
+							view more
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FEATURED BOX LINKS -->
+<!-- start: PANEL OPTIONS -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Patient Disease Groups</span></h5>
+			<p>
+				Click on a patient disease group to see data and details.
+			</p>
+			<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title">Cancer Type</h4>
+							<ul class="panel-heading-tabs border-light">
+								<li>
+									<div class="pull-right">
+										<div class="btn-group" dropdown is-open="status.isopen">
+											<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+												Options <span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li>
+													<a href="#">
+														Filter Last 24 hours
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Filter Last Week
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Filter Last 30 Days
+													</a>
+												</li>
+												<li class="divider"></li>
+												<li>
+													<a href="#">
+														Patient Data Package Request
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="rate">
+										<i class="fa fa-caret-up text-primary"></i><span class="value">15</span><span class="percentage">%</span>
+									</div>
+								</li>
+								<li class="panel-tools">
+									<ct-paneltool tool-refresh="load1"></ct-paneltool>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-body">
+						<!-- start: CONDENSED TABLE -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15">Cell <span class="text-bold">Template</span></h5>
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<!-- /// controller:  'ngTableCtrl4' -  localtion: assets/js/controllers/ngTableCtrl.js /// -->
+					<div ng-controller="ngTableCtrl4">
+						<div class="row margin-bottom-10">
+							<div class="col-md-12">
+								<button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">
+									Clear sorting
+								</button>
+							</div>
+						</div>
+						<table ng-table="tableParams" class="table">
+							<tr ng-repeat="user in $data">
+								<td data-title="'Name'"> {{user.name}} </td>
+								<td data-title="'Alias'"> {{user.alias}} </td>
+								<td data-title="'Power'" sortable="'power'"><span ng-class="{ 'plus': user.power >= 50,'minus': user.power < 50 }">{{user.power}}</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- end: CONDENSED TABLE -->	
+						
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="panel panel-white">
+						<div class="panel-heading border-light">
+							<h4 class="panel-title">Toolbar</h4>
+							<ul class="panel-heading-tabs border-light">
+								<li>
+									<div class="pull-right">
+										<div class="btn-group" dropdown is-open="status.isopen">
+											<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+												Tools <span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li>
+													<a href="#">
+														Action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Another action
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														Something else here
+													</a>
+												</li>
+												<li class="divider"></li>
+												<li>
+													<a href="#">
+														Separated link
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="rate">
+										<i class="fa fa-caret-up text-primary"></i><span class="value">15</span><span class="percentage">%</span>
+									</div>
+								</li>
+								<li class="panel-tools">
+									<ct-paneltool tool-refresh="load1"></ct-paneltool>
+								</li>
+							</ul>
+						</div>
+						<div class="panel-body">
+							<!-- start: BOOTSRAP NAV TREE -->
+<div class="container-fluid container-fullw bg-white">
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="over-title margin-bottom-15"><span class="text-bold">Angular Bootstrap Nav Tree</span></h5>
+			<p>
+				This is a Tree directive for Angular JS apps that use Bootstrap CSS.
+			</p>
+			<!-- /// controller:  'TreeCtrl' -  localtion: assets/js/controllers/treeCtrl.js /// -->
+			<div ng-controller="TreeCtrl">
+				<div class="row">
+					<div class="col-md-8 col-sm-6">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								<div class="box-tree">
+									<span ng-if="doing_async">...loading...</span>
+									<abn-tree tree-data="my_data" tree-control="my_tree" on-select="my_tree_handler(branch)" expand-level="2" initial-selection="Granny Smith" icon-leaf="ti-file" icon-expand="ti-plus" icon-collapse="ti-minus"></abn-tree>
+								</div>
+							</div>
+						</div>
+						<div class="alert alert-warning">
+							{{ output }}
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<!--button ng-click="try_changing_the_tree_data()" class="btn btn-primary btn-o margin-bottom-15">
+							Change Tree Definition
+						</button>
+						<br>
+						<button ng-click="try_async_load()" class="btn btn-primary btn-o">
+							Load Tree Data
+						</button-->
+						<hr>
+						<h5>Test the Tree Control API:</h5>
+						<br>
+						<button ng-click="my_tree.select_first_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							First Branch
+						</button>
+						<br>
+						<!--button ng-click="my_tree.select_next_sibling()" class="btn btn-primary btn-sm margin-bottom-10">
+							Next Sibling
+						</button>
+						<button ng-click="my_tree.select_prev_sibling()" class="btn btn-primary btn-sm margin-bottom-10">
+							Prev Sibling
+						</button>
+						<br>
+						<button ng-click="my_tree.select_next_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Next Branch
+						</button>
+						<button ng-click="my_tree.select_prev_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Prev Branch
+						</button>
+						<br>
+						<button ng-click="my_tree.select_parent_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Parent
+						</button-->
+						<hr>
+						<button ng-click="my_tree.expand_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Expand
+						</button>
+						<button ng-click="my_tree.collapse_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Collapse
+						</button>
+						<button ng-click="my_tree.expand_all()" class="btn btn-primary btn-sm margin-bottom-10">
+							Expand All
+						</button>
+						<button ng-click="my_tree.collapse_all()" class="btn btn-primary btn-sm margin-bottom-10">
+							Collapse All
+						</button>
+						<hr>
+						<button ng-click="try_adding_a_branch()" class="btn btn-primary btn-sm margin-bottom-10">
+							Add Branch
+						</button-->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: BOOTSRAP NAV TREE -->
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: PANEL OPTIONS -->
